@@ -12,7 +12,7 @@ jobs:
       - run: echo "💡 The ${{ github.repository }} repository has been cloned to the runner."
       - run: echo "🖥️ The workflow is now ready to test your code on the runner."
       
-      - name: HTTP Request Action
+      - name: HTTP  Request Action
         uses: fjogeleit/http-request-action@v1.8.1
         url: 'http://automssql001.westeurope.cloudapp.azure.com:9001/api/v3/schedules/d41f169d-88d5-442e-b8ba-9afe9dc01c3a/runNow?TEST_VALUE='ABC''
         method: 'POST'
