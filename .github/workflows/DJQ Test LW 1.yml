@@ -34,7 +34,7 @@ jobs:
         shell: pwsh
         run: |
           $headers = @{}
-          $headers.Add("AccessKey","adfad897s8d7a")
+          $headers.Add("AccessKey","aJYuHM3RRcDfJRKe")
           $runScheduleId = "d41f169d-88d5-442e-b8ba-9afe9dc01c3a"
           $runNow = Invoke-WebRequest -Method PUT -ContentType "application/json" -Headers $headers "http:\\vmctrl01.westeurope.cloudapp.azure.com:9001/api/v3/schedules/$runScheduleId/runNow?TEST_VALUE='ABC'"
           Write-Host "Result: " $runNow
