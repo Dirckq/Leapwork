@@ -33,10 +33,8 @@ jobs:
       - name: Run a multi-line script
         shell: pwsh
         run: |
-          Write-Host "Getting id for schedule '$schedule'."
-          # Get the id of the schedule.
           $headers = @{}
           $headers.Add("AccessKey","xxQ4US96Ew1pfGHe")
           $runScheduleId = "d41f169d-88d5-442e-b8ba-9afe9dc01c3a"
-          $runNow = Invoke-WebRequest -Method PUT -ContentType "application/json" -Headers $headers "http://automssql001.westeurope.cloudapp.azure.com:9001/api/v3/schedules/$runScheduleId/runNow?TEST_VALUE='ABC'"
+          $runNow = Invoke-WebRequest -Method PUT -ContentType "application/json" -Headers $headers "http:\\vmctrl01.westeurope.cloudapp.azure.com:9001/api/v3/schedules/$runScheduleId/runNow?TEST_VALUE='ABC'"
           Write-Host "Result: " $runNow
