@@ -46,9 +46,9 @@ jobs:
           {
             Start-Sleep -Seconds 5
             Write-Host "Polling for run results. Runid=" $runId
-            $runResult = Invoke-WebRequest -ContentType "application/json" -Headers $headers "http://automssql001.westeurope.cloudapp.azure.com:9001/api/v3/run/$runId" | ConvertFrom-Json
+            $runResult = Invoke-WebRequest -ContentType "application/json" -Headers $headers "http://vmctrl01.westeurope.cloudapp.azure.com:9001/api/v3/run/$runId" | ConvertFrom-Json
           } 
           while ($runResult.Status -ne 'Finished')
           Write-Host "Results received."
-          #Invoke-WebRequest -ContentType "application/json" -Headers $headers "http://automssql001.westeurope.cloudapp.azure.com:9001/api/v4/variables/c012e4ff-7c98-4dd1-91c2-ed403060ba78" | ConvertFrom-Json 
+          #Invoke-WebRequest -ContentType "application/json" -Headers $headers "http://vmctrl01.westeurope.cloudapp.azure.com:9001/api/v4/variables/c012e4ff-7c98-4dd1-91c2-ed403060ba78" | ConvertFrom-Json 
           Write-Host "Run Result:" $runResult
